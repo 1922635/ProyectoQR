@@ -1,3 +1,3 @@
 # ProyectoQR
-Proyecto final de Desarrollo de Interfaces
+Proyecto final de Desarrollo de Interfaces(DAM)
 
