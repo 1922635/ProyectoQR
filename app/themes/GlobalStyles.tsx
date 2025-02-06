@@ -67,7 +67,7 @@ input_form_box:{
     color:Colores.white,
     fontSize:TamanoLetra.normal_text,
   },
-  fila: {
+  row: {
     flexDirection: 'row',
     justifyContent: "center",
 
@@ -94,5 +94,43 @@ input_form_box:{
   },
   small_maring_top:{
     marginTop:30,
+  },
+  arrow_style:{
+    position:"absolute",
+    left:30,
+    top:30,
+  },
+  qr_box_style:{
+    width:"80%",
+    backgroundColor:Colores.white,
+    borderRadius:20,
+    borderWidth:10,
+    borderBottomWidth:70,
+    borderColor:Colores.blue,
+    height:"50%",
+    alignItems:"center",
+    alignContent:"center"
+  },
+  qr_style:{
+    resizeMode:"contain",
+    width:"90%",
+    height:"90%"
+  },
+  top_margin_negative_small:{
+    marginTop:-50,
+  },
+  id_text:{
+    fontSize:TamanoLetra.h3,
+    color:Colores.white
+  },
+  subtitle:{
+    marginTop:50,
+    fontSize:TamanoLetra.h2,
+  },
+  medium_text:{
+    marginTop: 10,
+    fontSize:TamanoLetra.h2,
+    textAlign:"center",
+    width:"80%",
   },
 })

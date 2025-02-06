@@ -12,7 +12,7 @@ export const TipoLetra={
   }as const
 export const TamanoLetra={
     h1: 44,
-    h2: 23,
+    h2: 25,
     h3:20,
     normal_text: 18,
     small_text:16,
@@ -22,4 +22,7 @@ export const TamanoLetra={
   export const TamanoBoton={
     normal: 80,
     grande: 174,
+  }as const
+  export const TamanoFlecha={
+    normal:35,
   }as const

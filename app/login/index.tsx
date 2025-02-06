@@ -18,7 +18,7 @@ export default function Login() {
         <InputTextCustom nombre="NRE"></InputTextCustom>
         <InputTextCustom nombre="Contraseña" TextoSeguro={true}></InputTextCustom>
         <View style={GlobalStyles.containerDerecha}><Text style={GlobalStyles.light_blue_text}>¿Olvidaste la contraseña?</Text></View>
-        <View style={[GlobalStyles.fila,GlobalStyles.main_size,GlobalStyles.small_maring_top]}>
+        <View style={[GlobalStyles.row,GlobalStyles.main_size,GlobalStyles.small_maring_top]}>
           <Link_custom nombre="Registrarse" onPress={()=>{router.push('./register')}}></Link_custom>
           <Button_custom nombre="Acceder" onPress={()=>{router.push('./home')}}></Button_custom>
         </View>

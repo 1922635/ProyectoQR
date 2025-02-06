@@ -18,7 +18,7 @@ export default function Register() {
         <InputTextCustom nombre="NRE"></InputTextCustom>
         <InputTextCustom nombre="Contraseña" TextoSeguro={true}></InputTextCustom>
         <InputTextCustom nombre="Confirmar contraseña" TextoSeguro={true}></InputTextCustom>
-        <View style={[GlobalStyles.fila,GlobalStyles.main_size,GlobalStyles.small_maring_top]}>
+        <View style={[GlobalStyles.row,GlobalStyles.main_size,GlobalStyles.small_maring_top]}>
           <Link_custom nombre="Iniciar sesión" onPress={()=>{router.push('./login')}}></Link_custom>
           <Button_custom nombre="Registrarse" onPress={()=>{router.push('./home')}}></Button_custom>
         </View>
