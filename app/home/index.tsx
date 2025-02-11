@@ -7,14 +7,26 @@ import { Ionicons } from "@expo/vector-icons";
 import { Colores, TamanoFlecha,  } from "../themes/Colores";
 import Button_custom from "@/components/button_custom";
 import Link_custom from "@/components/link_custom";
+import { auth } from "@/Firebaseconfig";
+import { getAuth } from "firebase/auth";
 
 
 export default function Home() {
+
+  getAuth().onAuthStateChanged((user) => {
+    if (!user) router.push('/');
+  });
+  function logout (){
+    auth.signOut();
+    console.log("Logout");
+
+  }
+
   return (
     <ScrollView
     contentContainerStyle={GlobalStyles.containerCentrado}
     >
-        <Pressable style={GlobalStyles.arrow_style} onPress={()=>{router.push("/login")}}>
+        <Pressable style={GlobalStyles.arrow_style} onPress={logout}>
           <Ionicons name="arrow-back" size={TamanoFlecha.normal}></Ionicons>
         </Pressable>
         
