@@ -7,12 +7,16 @@ import { Ionicons } from "@expo/vector-icons";
 import { Colores, TamanoFlecha,  } from "../themes/Colores";
 import Button_custom from "@/components/button_custom";
 import Link_custom from "@/components/link_custom";
-import { auth } from "@/Firebaseconfig";
+import { auth, db } from "@/Firebaseconfig";
 import { getAuth } from "firebase/auth";
+import { useEffect, useState } from "react";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 
 export default function Home() {
-
+  const coleccionUsuarios = collection(db,'Usuarios');
+  const [usuarios, setUsuarios] = useState<any>([]);
+  let correoQR:string;
   getAuth().onAuthStateChanged((user) => {
     if (!user) router.push('/');
   });
@@ -20,6 +24,24 @@ export default function Home() {
     auth.signOut();
     console.log("Logout");
 
+  }
+  let user = auth.currentUser;
+  console.log(auth.currentUser?.email)
+  useEffect(() => {
+    cargarDatos();
+  },[user]);
+
+
+  const cargarDatos = async () => {
+    if (user) {
+      const q = query (coleccionUsuarios,where("email","==",user.email));
+      const datos = await getDocs(q);
+
+      console.log("Encontrado el email "+user.email)
+
+      setUsuarios(datos.docs.map((doc) => ({...doc.data(), id: doc.id})));
+      console.log(usuarios);
+    }
   }
 
   return (

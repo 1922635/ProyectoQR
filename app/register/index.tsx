@@ -8,11 +8,14 @@ import { Colores } from "../themes/Colores";
 import Button_custom from "@/components/button_custom";
 import Link_custom from "@/components/link_custom";
 import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/Firebaseconfig";
+import { createUserWithEmailAndPassword, UserCredential } from "firebase/auth";
+import { auth, db } from "@/Firebaseconfig";
+import { addDoc, collection } from "firebase/firestore";
 
 
 export default function Register() {
+    const coleccionUsuarios = collection(db,'Usuarios');
+    const [usuarios, setUsuarios] = useState<any>([]);
     const[email,setEmail]= useState('');
     const[password,setPassword]= useState('');
     const[passwordConfirm,setPasswordConfirm]= useState('');
@@ -20,6 +23,8 @@ export default function Register() {
       try{
           if(password==passwordConfirm){
             const user = await (createUserWithEmailAndPassword(auth,email,password))
+            addTarea(user)
+            router.push("/home")
           }else{
             Alert.alert("Las contraseñas no coinciden")
           }
@@ -28,6 +33,16 @@ export default function Register() {
         Alert.alert("Ha ocurrido un error al registrar al usuario",error.message)
       }
     }
+
+    const addTarea = async (user:UserCredential) => {
+      if (user) {
+        await addDoc(coleccionUsuarios, { email: user.user.email, password:password});
+        
+      } else {
+        console.log("Para añadir una tarea es preciso loguearse primero");
+      }
+    }
+  
   return (
     <ScrollView
     contentContainerStyle={GlobalStyles.containerCentrado}>
