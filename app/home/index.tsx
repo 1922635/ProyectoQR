@@ -55,7 +55,9 @@ export default function Home() {
         <View style={[GlobalStyles.qr_box_style,GlobalStyles.row]}>
           <Image source={require("../../assets/images/qrtest.png")} style={GlobalStyles.qr_style}></Image>
         </View>
-        <Text style={[GlobalStyles.top_margin_negative_small,GlobalStyles.id_text]}>ID: 000000000000</Text>
+        <Text style={[GlobalStyles.top_margin_negative_small,GlobalStyles.id_text]}>
+          {user?.email ? user.email.split('@')[0] : "No hay usuario"}
+        </Text>
         <Text style={[GlobalStyles.subtitle,GlobalStyles.bold_text]}>TU CÓDIGO QR</Text>
         <Text style={[GlobalStyles.medium_text]}>Escanéa este código para registrar la asistencia a clase.</Text>
             
