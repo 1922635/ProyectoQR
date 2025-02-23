@@ -11,6 +11,7 @@ import { auth, db } from "@/Firebaseconfig";
 import { getAuth } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { collection, getDocs, query, where } from "firebase/firestore";
+import QRCode from "react-native-qrcode-svg"
 
 
 export default function Home() {
@@ -43,6 +44,7 @@ export default function Home() {
       console.log(usuarios);
     }
   }
+  correoQR = user?.email ?? "Usuario no autenticado"
 
   return (
     <ScrollView
@@ -53,7 +55,7 @@ export default function Home() {
         </Pressable>
         
         <View style={[GlobalStyles.qr_box_style,GlobalStyles.row]}>
-          <Image source={require("../../assets/images/qrtest.png")} style={GlobalStyles.qr_style}></Image>
+          <QRCode value={correoQR} size={200}></QRCode>  
         </View>
         <Text style={[GlobalStyles.top_margin_negative_small,GlobalStyles.id_text]}>
           {user?.email ? user.email.split('@')[0] : "No hay usuario"}
