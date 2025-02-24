@@ -20,7 +20,7 @@ containerDerecha: {
     alignItems: "flex-end"
 },
 bold_text:{
-    fontWeight:"bold",
+    fontFamily: "MontserratBold"
 },
 light_blue_text:{
     color:Colores.lightBlue,
