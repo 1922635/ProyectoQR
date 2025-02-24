@@ -24,12 +24,14 @@ bold_text:{
 },
 light_blue_text:{
     color:Colores.lightBlue,
+    fontFamily: "MontserratBold"
 },
 blue_text:{
     color:Colores.blue,
 },
 title:{
-    fontSize:TamanoLetra.h1
+    fontSize:TamanoLetra.h1,
+
 },
 input_form_box:{
 
@@ -47,6 +49,7 @@ input_form_box:{
   },
   input_form_text: {
     fontSize:TamanoLetra.normal_text,
+    fontFamily: "MontserratBold"
   },
   button_box:{
     backgroundColor:Colores.blue,
@@ -66,6 +69,7 @@ input_form_box:{
   button_text:{
     color:Colores.white,
     fontSize:TamanoLetra.normal_text,
+    fontFamily: "MontserratBold"
   },
   row: {
     flexDirection: 'row',
@@ -79,6 +83,7 @@ input_form_box:{
     color:Colores.blue,
     fontSize:TamanoLetra.normal_text,
     textDecorationLine:"underline",
+    fontFamily: "MontserratBold"
   },
   link_box:{
     paddingTop:12,
@@ -121,16 +126,19 @@ input_form_box:{
   },
   id_text:{
     fontSize:TamanoLetra.h3,
-    color:Colores.white
+    color:Colores.white,
+    fontFamily: "MontserratBold"
   },
   subtitle:{
     marginTop:50,
     fontSize:TamanoLetra.h2,
+    fontFamily: "MontserratBold"
   },
   medium_text:{
     marginTop: 10,
     fontSize:TamanoLetra.h2,
     textAlign:"center",
     width:"80%",
+    fontFamily: "Montserrat"
   },
 })
